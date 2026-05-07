@@ -1,15 +1,61 @@
+# The Four Pillars of OOP in TypeScript
+
+## Introduction
+
+The four pillars of Object-Oriented Programming (OOP) help developers manage complex applications more easily. These pillars are Inheritance, Polymorphism, Abstraction, and Encapsulation.
+
 ## Inheritance
 
-Inheritance helps reduce code duplication by allowing one class to reuse the properties and methods of another class. In large-scale TypeScript projects, this makes the codebase more organized and easier to maintain because common logic can be written once in a parent class and shared across multiple child classes.
+Inheritance allows one class to reuse the properties and methods of another class. This reduces code duplication and makes the code easier to maintain.
+
+```ts
+class Person {
+  name: string = "John";
+}
+
+class Student extends Person {
+  grade: string = "A";
+}
+```
 
 ## Polymorphism
 
-Polymorphism allows different classes to use the same method. This improves flexibility and scalability in TypeScript projects because developers can write more generic and reusable code. At the same time handling different object behaviors through a common interface or parent class.
+Polymorphism allows different classes to use the same method in different ways. This makes code more flexible and reusable.
+
+```ts
+class Animal {
+  sound(): void {
+    console.log("Animal sound");
+  }
+}
+
+class Dog extends Animal {
+  sound(): void {
+    console.log("Bark");
+  }
+}
+```
 
 ## Abstraction
 
-Abstraction hides complex implementation details and exposes only the necessary functionality to the user. In large applications, this reduces complexity by separating what an object does from how it works internally, making the system easier to understand, test, and maintain.
+Abstraction hides complex implementation details and only shows the necessary parts to the user. This helps reduce complexity in large projects.
+
+```ts
+abstract class Shape {
+  abstract draw(): void;
+}
+```
 
 ## Encapsulation
 
-Encapsulation protects data by restricting direct access to an object's internal properties and allowing controlled access through methods. In TypeScript projects, this improves security, prevents unintended modifications, and keeps the application logic more stable and maintainable.
+Encapsulation protects data by controlling access to class properties. This improves security and keeps the application stable.
+
+```ts
+class User {
+  private password: string = "12345";
+}
+```
+
+## Conclusion
+
+The four pillars of OOP help developers write clean, reusable, and maintainable TypeScript applications. They reduce complexity and improve code organization.
